@@ -1,13 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+  const age = 22; 
+  let feedback = '';  
+
+  if (age >= 18) {
+    feedback = 'You are allowed to drive. YAY!'
+  } else 
+    {
+      feedback = 'You are not allowed to drive yet.'
+    }
+  
+  
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      
+      <Text style={styles.response}> {feedback} </Text>
+      
     </View>
-  );
+  ); 
 }
 
 const styles = StyleSheet.create({
@@ -17,4 +29,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  response: {
+    fontSize: 28,
+
+  }
 });
